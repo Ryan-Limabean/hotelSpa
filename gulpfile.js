@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var $    = require('gulp-load-plugins')();
+var browserSync = require('browser-sync').create();
 
 var sassPaths = [
   'node_modules/foundation-sites/scss',
@@ -19,6 +20,16 @@ gulp.task('sass', function() {
     .pipe(gulp.dest('css'));
 });
 
-gulp.task('default', ['sass'], function() {
+gulp.task('default', ['browserSync','sass'], function() {
   gulp.watch(['scss/**/*.scss'], ['sass']);
+  gulp.watch('./*.html', browserSync.reload); 
+  gulp.watch('./js/**/*.js', browserSync.reload);
 });
+
+gulp.task('browserSync', function() {
+  browserSync.init({
+    server: {
+      baseDir: './'
+    }
+  })
+})
