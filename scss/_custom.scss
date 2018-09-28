@@ -6,7 +6,7 @@
         top: 0;
         left: 0;
         width: 100%;
-        height: 600px;
+        height: 746px;
         opacity: 0.5;
      
         background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%); /* FF3.6-15 */
@@ -14,13 +14,27 @@
         background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
     }
+
+    // #video {
+    //     position: absolute; 
+    //     left: 0; 
+    //     bottom: 0;
+    //     min-width: 100%; 
+    //     min-height: 100%;
+    //     width: auto; 
+    //     height: auto; 
+    //     z-index: -100;
+    //     background-size: cover;
+    //     //overflow: hidden;
+    // }
 }
 
 .header-content {
     position: absolute;
     top: 0;
     left: 0;  
-    width: 100%
+    width: 100%;
+    padding: rem-calc(20) rem-calc(100) 0 rem-calc(100);
 }
 
 .headline {
@@ -39,13 +53,50 @@
 }
 
 .menu-icon, .menu-icon:hover {
+    float: right;
     width: rem-calc(40);
     height: rem-calc(36);
-    margin-top: rem-calc(10s);
+    margin-top: rem-calc(10);
+    
     &::after {
         background-color: $white;
         height: rem-calc(8);
         box-shadow: 0 28px 0 $white, 0 14px 0 $white;
     }
 }
+
+.rooms {
+    height: rem-calc(360);
+
+    padding: {
+        left: rem-calc(60);
+        right: rem-calc(60);
+    }
+
+    .room-block {
+        .image {
+            position: relative;
+            img {
+                width: 100%;
+            }
+            
+            .room-title {
+                position: absolute;
+                bottom: 0;
+                left: 10px;
+
+                color: $white;
+            }
+        }
+    }
+}   
+
+
+.view-all {
+    margin-top: 50px;
+    margin-right: rem-calc(60);
+    float: right;
+
+}
+
 
